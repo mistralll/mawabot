@@ -21,20 +21,20 @@ func ConnectToDiscord() (*discordgo.Session, error) {
 
 	fmt.Println(token)
 
-	discord, err := discordgo.New(token)
+	dg, err := discordgo.New(token)
 	if err != nil {
 		fmt.Println("Fail to login.")
 		return nil, err
 	}
 
 	// discord.AddHandler()
-
-	err = discord.Open()
+	
+	err = dg.Open()
 	if err != nil {
 		return nil, err
 	}
 
-	defer discord.Close()
+	defer dg.Close()
 
 	fmt.Println("Listening...")
 
@@ -42,5 +42,5 @@ func ConnectToDiscord() (*discordgo.Session, error) {
 	signal.Notify(stopBot, syscall.SIGINT, syscall.SIGTERM, os.Interrupt)
 	<-stopBot
 
-	return discord, nil
+	return dg, nil
 }
