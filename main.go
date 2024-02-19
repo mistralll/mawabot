@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 
 	"github.com/bwmarrin/discordgo"
@@ -15,10 +14,8 @@ type Bot struct {
 func main() {
 	discord, err := service.ConnectToDiscord()
 	if err != nil {
-		fmt.Println("check 1")
 		log.Fatal(err)
 	}
-	fmt.Println("check 2")
 
 	var bot Bot
 	bot.discord = discord
