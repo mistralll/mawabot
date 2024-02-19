@@ -1,4 +1,4 @@
-package discord
+package service
 
 import (
 	"fmt"
@@ -28,7 +28,7 @@ func ConnectToDiscord() (*discordgo.Session, error) {
 	}
 
 	// discord.AddHandler()
-	
+
 	err = dg.Open()
 	if err != nil {
 		return nil, err
