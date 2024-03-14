@@ -1,11 +1,10 @@
 import discord
-from discord import app_commands
 import os
 from dotenv import load_dotenv
 load_dotenv()
 
 client = discord.Client(intents=discord.Intents.default())
-tree = app_commands.CommandTree(client)
+tree = discord.app_commands.CommandTree(client)
 
 @client.event
 async def on_ready():
