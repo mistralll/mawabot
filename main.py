@@ -6,6 +6,7 @@ load_dotenv()
 client = discord.Client(intents=discord.Intents.default())
 tree = discord.app_commands.CommandTree(client)
 
+# 起動確認
 @client.event
 async def on_ready():
     print("READY")
@@ -21,7 +22,6 @@ async def on_voice_state_update(mem:discord.Member, bf:discord.VoiceState, af:di
 # YouTube ダウンロードコマンド
 from yt_dlp import YoutubeDL
 from gfile import GFile
-
 @tree.command(name="youtube_dowonload", description="Download YouTube video.")
 async def download_youtube_command(interaction: discord.Interaction, url:str):
     await interaction.response.send_message('リクエストを処理中...')
