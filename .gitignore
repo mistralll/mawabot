@@ -1,3 +1,9 @@
-/.venv
+# security
 .env
+
+# python
+/.venv
+/__pycache__
+
+# temporary files
 /download
