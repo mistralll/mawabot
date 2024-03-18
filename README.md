@@ -1,6 +1,5 @@
 # mwBot
 
-## for developer
 ### package management
 To install pakcages, clone this repository and run follow command.
 ```sh
@@ -8,6 +7,9 @@ pip install -r requirements.txt
 ```
 
 To uodate pip package list, run `./script/update-requrements.sh`.
+```sh
+sh ./scripts/update-requrements.sh
+```
 
 This project use **venv** for package management.
 ```sh
@@ -15,7 +17,15 @@ python3 -m venv --prompt . .venv
 source .venv/bin/activate
 ```
 ### .env
-TODO
+```.env
+APP_BOT_TOKEN="your discord bot token"
+NOTICE_CHANNEL_ID="your notice channel id"
+```
+
+### how to run
+```sh
+python main.py
+```
 
 ## reference
 ### discord.py
